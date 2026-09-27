@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the traditions, places and stories that make India's cultural heritage unique.">
+  <title>SanskritiPath</title>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js"></script>
+</head>
+<body>
+  
+  <!-- Site header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="SanskritiPath home">
+        <img src="assets/icons/logo.png" alt="SanskritiPath" class="brand-logo">
+        <span>SanskritiPath</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#explore">Explore India</a>
+        <a class="nav-link" href="#culture">Culture</a>
+        <a class="nav-link" href="#heritage">Heritage Places</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home hero -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Explore India <span>•</span> Discover Heritage <span>•</span> Experience Culture</p>
+          <h1>Discover the India you haven't seen yet.</h1>
+          <p class="lead">Explore the traditions, stories, art, food and heritage that make every region of India unique.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#explore">Start Exploring <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#culture">Explore Culture</a>
+          </div>
+        </div>
+        <div class="hero-image image-frame">
+          <div class="hero-slideshow" id="heroSlideshow">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85" alt="A heritage monument in India" class="hero-slide active" onerror="handleImageError(this)">
+          </div>
+          <div class="image-caption"><span>01</span><span>Stories waiting to be found</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div class="container split-grid">
+        <div>
+          <p class="section-kicker">A living inheritance</p>
+          <h2>India is more than its landmarks.</h2>
+          <p>India’s true heritage lives beyond its monuments - in its stories, traditions, art, crafts, festivals, and the people who keep them alive. Every region carries a unique cultural identity waiting to be discovered.</p>
+          <p>SanskritiPath brings these living traditions closer to you, helping you explore, understand, and appreciate the cultural richness of India-one story at a time.</p>
+        </div>
+        <div class="intro-image image-frame">
+          <img src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=900&q=80" alt="Colorful traditional Indian details" onerror="handleImageError(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="states">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Start with a place</p>
+            <h2>Explore India by state</h2>
+          </div>
+          <p>Every state holds a world of stories, traditions, arts, and living heritage. Choose a state and begin your journey through India’s cultural diversity.</p>
+        </div>
+        <div class="state-grid" id="stateGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="culture-preview">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Many expressions, one country</p>
+            <h2>Explore by culture</h2>
+          </div>
+          <p>Explore the many forms of India’s living heritage. Choose a cultural thread and discover the traditions, stories, and communities that bring it to life.
+</p>
+        </div>
+        <div class="culture-category-grid" id="cultureCategoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section soft-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Worth the detour</p>
+            <h2>Featured heritage</h2>
+          </div>
+          <a class="text-link" href="#heritage">See all places →</a>
+        </div>
+        <div class="card-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <section class="section gems-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Look a little closer</p>
+            <h2>Discover hidden gems</h2>
+          </div>
+          <p>Go beyond the places everyone already knows.</p>
+        </div>
+        <p class="section-intro">There is always another story just beyond the usual route.</p>
+        <div class="card-grid" id="gemsGrid"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-kicker">Your next story</p>
+          <h2>Your journey through India starts here.</h2>
+          <p>Let curiosity choose the next stop.</p>
+        </div>
+        <a class="button button-light" href="#explore">Explore India <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- Explore, culture, and heritage pages -->
+    <section class="section page-section" id="explore">
+      <div class="container">
+        <p class="section-kicker">Build your own route</p>
+        <h2>Explore India</h2>
+        <p class="page-intro">Discover traditions, places and stories from across the country.</p>
+        <div class="explore-tools">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Search states, festivals, food, art, places..." aria-label="Search heritage and culture">
+          </label>
+          <div class="filter-row">
+            <label>
+              State
+              <select id="stateFilter">
+                <option value="All States">All States</option>
+              </select>
+            </label>
+            <label>
+              Category
+              <select id="categoryFilter">
+                <option value="All">All</option>
+              </select>
+            </label>
+            <button class="clear-button" id="clearFilters" type="button">Clear filters</button>
+          </div>
+        </div>
+        <p class="result-count" id="exploreCount"></p>
+        <div class="card-grid" id="exploreGrid"></div>
+      </div>
+    </section>
+
+    <section class="section page-section soft-section" id="culture">
+      <div class="container">
+        <p class="section-kicker">Beyond the familiar</p>
+        <h2>Culture of India</h2>
+        <p class="page-intro">Explore the practices, flavours and creative forms that carry meaning across generations.</p>
+        <div class="tab-list" id="cultureTabs" role="tablist"></div>
+        <div class="card-grid" id="cultureGrid"></div>
+        <div class="random-discovery">
+          <div>
+            <strong>Discover something random</strong>
+            <span>Let the collection choose your next stop.</span>
+          </div>
+          <button class="button button-primary" id="surpriseButton" type="button">Surprise me</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-section" id="heritage">
+      <div class="container">
+        <p class="section-kicker">Places with a past</p>
+        <h2>Heritage places</h2>
+        <p class="page-intro">Explore places that carry stories from generations.</p>
+        <div class="filter-row heritage-filters">
+          <label>
+            State
+            <select id="heritageStateFilter">
+              <option value="All States">All States</option>
+            </select>
+          </label>
+          <label>
+            Type
+            <select id="typeFilter">
+              <option value="All">All</option>
+            </select>
+          </label>
+          <button class="clear-button" id="clearHeritageFilters" type="button">Clear filters</button>
+        </div>
+        <div class="card-grid" id="heritageGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <img src="assets/icons/logo.png" alt="SanskritiPath" class="brand-logo">
+          <span>SanskritiPath</span>
+        </a>
+        <p>SanskritiPath brings these living traditions closer to you. Journey across India, explore the cultural richness of every state, discover its traditional arts, crafts, festivals, and practices, and uncover the stories of the communities that continue to preserve them.</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <a href="#home">Home</a>
+        <a href="#explore">Explore India</a>
+        <a href="#culture">Culture</a>
+        <a href="#heritage">Heritage Places</a>
+      </div>
+      <div>
+        <h3>Project</h3>
+        <a href="#">Sources &amp; Credits</a>
+        <a href="#">About</a>
+        <p class="footer-note">Smart India Hackathon 2026<br>SIH26195</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail modal (populated by script.js) -->
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
+    <div class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close details">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-content">
+        <div class="modal-meta">
+          <span id="modalState"></span>
+          <span id="modalCategory"></span>
+        </div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <h3>Cultural significance</h3>
+        <p id="modalSignificance"></p>
+        <h3>Key facts</h3>
+        <p id="modalFacts"></p>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
